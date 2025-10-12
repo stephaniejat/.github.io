@@ -9,55 +9,90 @@
     <style>
         /* Custom font import (Inter) */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+        
+        /* --- ALL CUSTOM COLOR DEFINITIONS --- */
+        :root {
+            /* Standard Colors */
+            --background: 44.52deg 52.54% 88.43%;
+            --foreground: 0 0% 8.24%;
+            --border: 35 10.53% 77.65%;
+            
+            /* Card & Popover Colors */
+            --card: 183.87deg 80.31% 37.84%;
+            --card-foreground: 210 25% 7.8431%;
+            --card-border: 38 15% 90%;
+            --popover: 183.87deg 80.31% 37.84%;
+            --popover-foreground: 210 25% 7.8431%;
+            --popover-border: 38 15% 87%;
+
+            /* Primary/Accent Colors */
+            --primary: 334.06deg 80.31% 37.84%; /* Used for main accent color (links/titles/borders) */
+            --primary-foreground: 70.91deg 21.57% 90%;
+            --secondary: 334.06deg 80.31% 37.84%;
+            --secondary-foreground: 70.91deg 21.57% 90%;
+            --accent: 183.87deg 80.31% 37.84%; /* Kept for reference but using --primary for main theme */
+            --accent-foreground: 334.06deg 80.31% 37.84%;
+            
+            /* Utility/Muted Colors */
+            --muted: 44.52deg 52.54% 88.43%;
+            --muted-foreground: 183deg 76.92% 5.1%;
+            --destructive: 3.87deg 80.31% 37.84%;
+            --destructive-foreground: 0 0% 100%;
+
+            /* Sidebar Colors (Not fully used, but defined) */
+            --sidebar: 180 6.6667% 97.0588%;
+            --sidebar-foreground: 210 25% 7.8431%;
+            --sidebar-border: 205.0000 25.0000% 90.5882%;
+            --sidebar-primary: 203.8863 88.2845% 53.1373%;
+            --sidebar-primary-foreground: 0 0% 100%;
+            --sidebar-accent: 211.5789 51.3514% 92.7451%;
+            --sidebar-accent-foreground: 203.8863 88.2845% 53.1373%;
+            --sidebar-ring: 202.8169 89.1213% 53.1373%;
+        }
+        
+        /* Body and Base Text Styling */
         body {
             font-family: 'Inter', sans-serif;
-            /* Using CSS variables for color consistency */
             background-color: hsl(var(--background) / 1);
             color: hsl(var(--foreground) / 1);
             line-height: 1.6;
-            scroll-behavior: smooth; /* Smooth scrolling for nav links */
-            padding-top: 64px; /* Space for the fixed nav bar */
+            scroll-behavior: smooth;
+            padding-top: 64px;
         }
 
-        /* --- Custom Color Definitions from index.css Variables --- */
-        :root {
-            /* Using a common indigo value for direct Tailwind compatibility */
-            --portfolio-accent: 248 53.8% 58.6%; /* A rich blue-purple (Used for links/titles) */
-            /* New Card colors from index.css for use in this single file */
-            --card: 183.87deg 80.31% 37.84%; /* Dark Teal/Cyan (Used for card backgrounds & badges) */
-            --card-foreground: 210 25% 7.8431%; /* Dark text color */
-        }
-        
-        /* Apply the custom color to the section bar */
+        /* Accent Styling (Now based on --primary) */
         .section-heading {
-            border-left: 5px solid hsl(var(--portfolio-accent) / 1); 
+            border-left: 5px solid hsl(var(--primary) / 1); /* Uses the primary color for the accent bar */
             padding-left: 1rem;
             margin-bottom: 1.5rem;
             font-weight: 700;
             color: hsl(var(--foreground) / 1);
         }
 
-        /* Applying the accent color to elements directly using the variable */
         .accent-text {
-            color: hsl(var(--portfolio-accent) / 1);
+            color: hsl(var(--primary) / 1);
         }
 
         .accent-bg-hover:hover {
-            background-color: hsl(var(--portfolio-accent) / 1);
+            background-color: hsl(var(--primary) / 1);
         }
         .accent-text-hover:hover {
-            color: white; /* Ensures contrast on hover */
+            color: white; 
         }
 
-        /* Override the hover background color for cards to be a slightly lighter teal */
+        /* Card Styling (Using --card) */
+        .card-bg {
+             background-color: hsl(var(--card) / 1);
+        }
         .card-hover-light:hover {
-            background-color: hsl(183.87deg 80.31% 45% / 1);
+            /* Create a slightly lighter teal for hover effect */
+            background-color: hsl(183.87deg 80.31% 45% / 1); 
         }
 
         /* Styling for the fixed navigation bar */
         #main-nav {
-            background-color: white;
-            z-index: 50; /* Ensure it stays above other content */
+            background-color: white; /* You could change this to hsl(var(--background) / 1) */
+            z-index: 50; 
         }
         .nav-link {
             transition: color 0.2s, border-bottom 0.2s;
@@ -65,8 +100,13 @@
             font-weight: 600;
         }
         .nav-link:hover {
-            color: hsl(var(--portfolio-accent) / 1);
-            border-bottom: 2px solid hsl(var(--portfolio-accent) / 1);
+            color: hsl(var(--primary) / 1);
+            border-bottom: 2px solid hsl(var(--primary) / 1);
+        }
+        
+        /* Ensures the main content card contrasts with the background */
+        .main-content-card {
+            background-color: white; /* Using pure white to stand out from the light background */
         }
     </style>
 </head>
@@ -79,7 +119,7 @@
             <div class="flex space-x-4 sm:space-x-6 text-sm overflow-x-auto py-1">
                 <a href="#about" class="nav-link">About Me</a>
                 <a href="#publications" class="nav-link">Publications</a>
-                <a href="#course" class="nav-link">Courses</a>
+                <a href="#courses" class="nav-link">Courses</a> <!-- Updated to #courses -->
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#education" class="nav-link">Education</a>
                 <a href="#experience" class="nav-link">Experience</a>
@@ -88,10 +128,9 @@
     </nav>
 
     <!-- Main Content Wrapper -->
-    <div class="max-w-6xl mx-auto bg-white shadow-xl rounded-2xl p-6 md:p-12">
+    <div class="max-w-6xl mx-auto main-content-card shadow-xl rounded-2xl p-6 md:p-12">
 
         <!-- Header: Name, Title, Contact -->
-        <!-- Moved Contact Icons below the main title, removed large name block since it's now in the fixed nav -->
         <header class="text-center mb-10 pb-6 border-b border-gray-100">
             <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-2">
                 STEPHANIE C. JAT
@@ -134,7 +173,7 @@
         <section id="about" class="mb-10">
             <h2 class="text-3xl section-heading">ABOUT ME</h2>
             <p class="text-lg text-gray-600">
-               I'm a Machine Learning MSc student at UCL. I also dabble in NLP, computational theory and linguistics, and UAV robotics.
+                I'm a Machine Learning MSc student at UCL. I also dabble in NLP, computational theory and linguistics, and UAV robotics.
             </p>
         </section>
 
@@ -165,20 +204,49 @@
         <!-- Academic Experience Section (Target: #courses) -->
         <section id="courses" class="mb-10">
             <h2 class="text-3xl section-heading">ACADEMIC EXPERIENCE</h2>
-            <div class="flex flex-wrap gap-2">
-                <!-- Badges now use the solid --card background with white text for high contrast -->
-                <span href="https://2025.iaiss.cc/" class="px-3 py-1 text-sm font-medium rounded-full" style="background-color: hsl(var(--card) / 1); color: white;">International Artificial Intelligence Summer School – IAISS 2025 
-                    <a href="IAISS-2025-certificate-Stephanie-Jat.pdf" target="_blank" rel="noopener noreferrer" class="font-semibold accent-text hover:underline flex items-center gap-1 w-fit">
-                    <!-- SVG Icon -->
-                    View Certificate </a></span>
-                <span href="https://pll.harvard.edu/course/cs50-introduction-computer-science" class="px-3 py-1 text-sm font-medium rounded-full" style="background-color: hsl(var(--card) / 1); color: white;">CS50 (HARVARD UNIVERSITY)
-                    <a href="CS50x.pdf" target="_blank" rel="noopener noreferrer" class="font-semibold accent-text hover:underline flex items-center gap-1 w-fit">
-                    <!-- SVG Icon -->
-                    View Certificate </a></span>
-                <span href="https://cs50.harvard.edu/ai/" class="px-3 py-1 text-sm font-medium rounded-full" style="background-color: hsl(var(--card) / 1); color: white;">CS50.AI (HARVARD UNIVERSITY)
-                    <a href="CS50AI.pdf" target="_blank" rel="noopener noreferrer" class="font-semibold accent-text hover:underline flex items-center gap-1 w-fit">
-                    <!-- SVG Icon -->
-                    View Certificate </a></span>
+            <div class="flex flex-wrap gap-4">
+                
+                <!-- IAISS 2025 -->
+                <a href="https://2025.iaiss.cc/" target="_blank" rel="noopener noreferrer"
+                    class="px-4 py-3 text-sm font-medium rounded-full card-bg text-white flex items-center justify-between gap-4 transition hover:scale-[1.02] hover:shadow-xl w-full sm:w-auto"
+                    style="text-decoration: none; box-shadow: 0 2px 4px -1px rgba(0,0,0,0.1);">
+                    <span class="font-bold whitespace-nowrap">International AI Summer School – IAISS 2025</span>
+                    <span class="ml-auto flex-shrink-0">
+                        <a href="assets/IAISS-2025-certificate-Stephanie-Jat.pdf" target="_blank" rel="noopener noreferrer"
+                            class="px-2 py-0.5 rounded-full text-xs font-extrabold"
+                            style="background-color: hsl(var(--primary) / 1); color: white; text-decoration: none;">
+                            Certificate &rarr;
+                        </a>
+                    </span>
+                </a>
+
+                <!-- CS50 (HARVARD UNIVERSITY) -->
+                <a href="https://pll.harvard.edu/course/cs50-introduction-computer-science" target="_blank" rel="noopener noreferrer"
+                    class="px-4 py-3 text-sm font-medium rounded-full card-bg text-white flex items-center justify-between gap-4 transition hover:scale-[1.02] hover:shadow-xl w-full sm:w-auto"
+                    style="text-decoration: none; box-shadow: 0 2px 4px -1px rgba(0,0,0,0.1);">
+                    <span class="font-bold whitespace-nowrap">CS50 (HARVARD UNIVERSITY)</span>
+                    <span class="ml-auto flex-shrink-0">
+                        <a href="assets/CS50x.pdf" target="_blank" rel="noopener noreferrer"
+                            class="px-2 py-0.5 rounded-full text-xs font-extrabold"
+                            style="background-color: hsl(var(--primary) / 1); color: white; text-decoration: none;">
+                            Certificate &rarr;
+                        </a>
+                    </span>
+                </a>
+                
+                <!-- CS50.AI (HARVARD UNIVERSITY) -->
+                <a href="https://cs50.harvard.edu/ai/" target="_blank" rel="noopener noreferrer"
+                    class="px-4 py-3 text-sm font-medium rounded-full card-bg text-white flex items-center justify-between gap-4 transition hover:scale-[1.02] hover:shadow-xl w-full sm:w-auto"
+                    style="text-decoration: none; box-shadow: 0 2px 4px -1px rgba(0,0,0,0.1);">
+                    <span class="font-bold whitespace-nowrap">CS50.AI (HARVARD UNIVERSITY)</span>
+                    <span class="ml-auto flex-shrink-0">
+                        <a href="assets/CS50AI.pdf" target="_blank" rel="noopener noreferrer"
+                            class="px-2 py-0.5 rounded-full text-xs font-extrabold"
+                            style="background-color: hsl(var(--primary) / 1); color: white; text-decoration: none;">
+                            Certificate &rarr;
+                        </a>
+                    </span>
+                </a>
             </div>
         </section>
 
@@ -187,14 +255,14 @@
             <h2 class="text-3xl section-heading">CODING & RESEARCH SKILLS</h2>
             <div class="flex flex-wrap gap-2">
                 <!-- Badges now use the solid --card background with white text for high contrast -->
-                <span class="px-3 py-1 text-sm font-medium rounded-full" style="background-color: hsl(var(--card) / 1); color: white;">Python, C, Shell</span>
-                <span class="px-3 py-1 text-sm font-medium rounded-full" style="background-color: hsl(var(--card) / 1); color: white;">Natural Language Processing (NLP)</span>
-                <span class="px-3 py-1 text-sm font-medium rounded-full" style="background-color: hsl(var(--card) / 1); color: white;">Machine Learning</span>
-                <span class="px-3 py-1 text-sm font-medium rounded-full" style="background-color: hsl(var(--card) / 1); color: white;">OpenAI & spaCy</span>
-                <span class="px-3 py-1 text-sm font-medium rounded-full" style="background-color: hsl(var(--card) / 1); color: white;">Data Analysis (Pandas/Matplotlib)</span>
-                <span class="px-3 py-1 text-sm font-medium rounded-full" style="background-color: hsl(var(--card) / 1); color: white;">HTML, CSS, JavaScript, Django</span>
-                <span class="px-3 py-1 text-sm font-medium rounded-full" style="background-color: hsl(var(--card) / 1); color: white;">English, Cantonese & Putonghua (native)</span>
-                <span class="px-3 py-1 text-sm font-medium rounded-full" style="background-color: hsl(var(--card) / 1); color: white;">Spanish (Fluent)</span>
+                <span class="px-3 py-1 text-sm font-medium rounded-full card-bg" style="color: white;">Python, C, Shell</span>
+                <span class="px-3 py-1 text-sm font-medium rounded-full card-bg" style="color: white;">Natural Language Processing (NLP)</span>
+                <span class="px-3 py-1 text-sm font-medium rounded-full card-bg" style="color: white;">Machine Learning</span>
+                <span class="px-3 py-1 text-sm font-medium rounded-full card-bg" style="color: white;">OpenAI & spaCy</span>
+                <span class="px-3 py-1 text-sm font-medium rounded-full card-bg" style="color: white;">Data Analysis (Pandas/Matplotlib)</span>
+                <span class="px-3 py-1 text-sm font-medium rounded-full card-bg" style="color: white;">HTML, CSS, JavaScript, Django</span>
+                <span class="px-3 py-1 text-sm font-medium rounded-full card-bg" style="color: white;">English, Cantonese & Putonghua (native)</span>
+                <span class="px-3 py-1 text-sm font-medium rounded-full card-bg" style="color: white;">Spanish (Fluent)</span>
             </div>
         </section>
 
@@ -228,7 +296,7 @@
                 
                 <!-- Card 1: AI Internship (Linked to GitHub for code examples) -->
                 <a href="https://github.com/scj45" target="_blank" rel="noopener noreferrer" 
-                   class="block p-6 rounded-xl shadow-lg transition transform hover:scale-[1.01] group card-hover-light" style="background-color: hsl(var(--card) / 1); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);">
+                   class="block p-6 rounded-xl shadow-lg transition transform hover:scale-[1.01] group card-hover-light card-bg" style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);">
                     <h3 class="text-xl font-bold text-white mb-1">AI and Automation Intern</h3>
                     <p class="text-gray-300 mb-3">Amber Labs, UK (Oct 2023 - Feb 2024)</p>
                     <ul class="list-disc pl-5 text-gray-200 space-y-1 text-sm">
@@ -241,7 +309,7 @@
 
                 <!-- Card 2: Founder & CEO (Linked to Personal Site/Brand Site) -->
                 <a href="https://www.stephaniejat.com" target="_blank" rel="noopener noreferrer" 
-                   class="block p-6 rounded-xl shadow-lg transition transform hover:scale-[1.01] group card-hover-light" style="background-color: hsl(var(--card) / 1); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);">
+                   class="block p-6 rounded-xl shadow-lg transition transform hover:scale-[1.01] group card-hover-light card-bg" style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);">
                     <h3 class="text-xl font-bold text-white mb-1">Founder & CEO</h3>
                     <p class="text-gray-300 mb-3">Not Just Small Change, UK (Jan 2022 - Present)</p>
                     <ul class="list-disc pl-5 text-gray-200 space-y-1 text-sm">
@@ -254,7 +322,7 @@
 
                 <!-- Card 3: Editor-in-Chief (Linked to Personal Site/Journal Page) -->
                 <a href="https://www.stephaniejat.com" target="_blank" rel="noopener noreferrer" 
-                   class="block p-6 rounded-xl shadow-lg transition transform hover:scale-[1.01] group card-hover-light" style="background-color: hsl(var(--card) / 1); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);">
+                   class="block p-6 rounded-xl shadow-lg transition transform hover:scale-[1.01] group card-hover-light card-bg" style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);">
                     <h3 class="text-xl font-bold text-white mb-1">Editor-in-Chief U-Lingua</h3>
                     <p class="text-gray-300 mb-3">The Undergraduate Linguistics Association (Apr 2021 - Apr 2022)</p>
                     <ul class="list-disc pl-5 text-gray-200 space-y-1 text-sm">
@@ -266,7 +334,7 @@
                 </a>
 
                  <!-- Card 4: Leadership Roles (Not externally linkable, kept as div for non-interactive content) -->
-                <div class="p-6 rounded-xl shadow-lg transition" style="background-color: hsl(var(--card) / 1); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);">
+                <div class="p-6 rounded-xl shadow-lg transition card-bg" style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);">
                     <h3 class="text-xl font-bold text-white mb-1">Co-President & Welfare Officer</h3>
                     <p class="text-gray-300 mb-3">Pembroke College Committees</p>
                     <ul class="list-disc pl-5 text-gray-200 space-y-1 text-sm">

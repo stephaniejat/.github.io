@@ -91,7 +91,7 @@
 
         /* Styling for the fixed navigation bar */
         #main-nav {
-            background-color: white; /* You could change this to hsl(var(--background) / 1) */
+            background-color: hsl(var(--background) / 1); /* <-- UPDATED to use background variable */
             z-index: 50; 
         }
         .nav-link {
@@ -106,7 +106,17 @@
         
         /* Ensures the main content card contrasts with the background */
         .main-content-card {
-            background-color: white; /* Using pure white to stand out from the light background */
+            background-color: hsl(var(--background) / 1); /* <-- UPDATED to use background variable */
+        }
+        
+        /* Styling for the nested Certificate button for centering text */
+        .cert-button {
+            background-color: hsl(var(--primary) / 1);
+            color: white; 
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centering the text horizontally */
         }
     </style>
 </head>
@@ -213,8 +223,7 @@
                     <span class="font-bold whitespace-nowrap">International AI Summer School – IAISS 2025</span>
                     <span class="ml-auto flex-shrink-0">
                         <a href="assets/IAISS-2025-certificate-Stephanie-Jat.pdf" target="_blank" rel="noopener noreferrer"
-                            class="px-2 py-0.5 rounded-full text-xs font-extrabold"
-                            style="background-color: hsl(var(--primary) / 1); color: white; text-decoration: none;">
+                            class="px-2 py-0.5 rounded-full text-xs font-extrabold cert-button">
                             Certificate &rarr;
                         </a>
                     </span>
@@ -227,8 +236,7 @@
                     <span class="font-bold whitespace-nowrap">CS50 (HARVARD UNIVERSITY)</span>
                     <span class="ml-auto flex-shrink-0">
                         <a href="assets/CS50x.pdf" target="_blank" rel="noopener noreferrer"
-                            class="px-2 py-0.5 rounded-full text-xs font-extrabold"
-                            style="background-color: hsl(var(--primary) / 1); color: white; text-decoration: none;">
+                            class="px-2 py-0.5 rounded-full text-xs font-extrabold cert-button">
                             Certificate &rarr;
                         </a>
                     </span>
@@ -241,8 +249,7 @@
                     <span class="font-bold whitespace-nowrap">CS50.AI (HARVARD UNIVERSITY)</span>
                     <span class="ml-auto flex-shrink-0">
                         <a href="assets/CS50AI.pdf" target="_blank" rel="noopener noreferrer"
-                            class="px-2 py-0.5 rounded-full text-xs font-extrabold"
-                            style="background-color: hsl(var(--primary) / 1); color: white; text-decoration: none;">
+                            class="px-2 py-0.5 rounded-full text-xs font-extrabold cert-button">
                             Certificate &rarr;
                         </a>
                     </span>

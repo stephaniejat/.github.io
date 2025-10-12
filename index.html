@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stephanie C. Jat - Neurolinguistic & AI Researcher</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font import (Inter) */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Using CSS variables for color consistency */
+            background-color: hsl(var(--background) / 1);
+            color: hsl(var(--foreground) / 1);
+            line-height: 1.6;
+            scroll-behavior: smooth; /* Smooth scrolling for nav links */
+            padding-top: 64px; /* Space for the fixed nav bar */
+        }
+
+        /* --- Custom Color Definitions from index.css Variables --- */
+        :root {
+            /* Using a common indigo value for direct Tailwind compatibility */
+            --portfolio-accent: 248 53.8% 58.6%; /* A rich blue-purple (Used for links/titles) */
+            /* New Card colors from index.css for use in this single file */
+            --card: 183.87deg 80.31% 37.84%; /* Dark Teal/Cyan (Used for card backgrounds & badges) */
+            --card-foreground: 210 25% 7.8431%; /* Dark text color */
+        }
+        
+        /* Apply the custom color to the section bar */
+        .section-heading {
+            border-left: 5px solid hsl(var(--portfolio-accent) / 1); 
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            color: hsl(var(--foreground) / 1);
+        }
+
+        /* Applying the accent color to elements directly using the variable */
+        .accent-text {
+            color: hsl(var(--portfolio-accent) / 1);
+        }
+
+        .accent-bg-hover:hover {
+            background-color: hsl(var(--portfolio-accent) / 1);
+        }
+        .accent-text-hover:hover {
+            color: white; /* Ensures contrast on hover */
+        }
+
+        /* Override the hover background color for cards to be a slightly lighter teal */
+        .card-hover-light:hover {
+            background-color: hsl(183.87deg 80.31% 45% / 1);
+        }
+
+        /* Styling for the fixed navigation bar */
+        #main-nav {
+            background-color: white;
+            z-index: 50; /* Ensure it stays above other content */
+        }
+        .nav-link {
+            transition: color 0.2s, border-bottom 0.2s;
+            color: hsl(var(--card-foreground) / 1);
+            font-weight: 600;
+        }
+        .nav-link:hover {
+            color: hsl(var(--portfolio-accent) / 1);
+            border-bottom: 2px solid hsl(var(--portfolio-accent) / 1);
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+
+    <!-- Fixed Navigation Bar -->
+    <nav id="main-nav" class="fixed top-0 left-0 right-0 shadow-lg border-b border-gray-100 p-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center flex-wrap">
+            <span class="text-xl font-bold accent-text tracking-wider">S. C. JAT</span>
+            <div class="flex space-x-4 sm:space-x-6 text-sm overflow-x-auto py-1">
+                <a href="#about" class="nav-link">About Me</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#publications" class="nav-link">Publications</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#experience" class="nav-link">Experience</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <div class="max-w-6xl mx-auto bg-white shadow-xl rounded-2xl p-6 md:p-12">
+
+        <!-- Header: Name, Title, Contact -->
+        <!-- Moved Contact Icons below the main title, removed large name block since it's now in the fixed nav -->
+        <header class="text-center mb-10 pb-6 border-b border-gray-100">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-2">
+                STEPHANIE C. JAT
+            </h1>
+            <h2 class="text-lg md:text-xl font-medium accent-text mb-6">
+                NEUROLINGUISTIC & FORENSIC RESEARCHER | AI & CRITICAL THINKING
+            </h2>
+
+            <!-- Contact & Social Icon Buttons -->
+            <div class="flex flex-wrap justify-center gap-4 text-2xl">
+                
+                <!-- GitHub (Icon + Link) -->
+                <a href="https://github.com/scj45" target="_blank" rel="noopener noreferrer" title="GitHub Profile"
+                   class="p-3 rounded-full bg-gray-100 text-gray-700 accent-bg-hover accent-text-hover transition duration-300 shadow-md transform hover:scale-105">
+                    <!-- GitHub SVG Icon -->
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.418 2.867 8.165 6.83 9.489.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.46-1.11-1.46-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.116-4.555-4.949 0-1.092.39-1.983 1.029-2.675-.103-.253-.446-1.266.098-2.638 0 0 .84-.27 2.75 1.022A9.582 9.582 0 0112 6.865c.854.025 1.71.12 2.515.355 1.91-1.292 2.75-1.022 2.75-1.022.546 1.372.202 2.385.1 2.638.638.692 1.03 1.583 1.03 2.675 0 3.845-2.334 4.691-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.417-.012 2.747 0 .266.18.575.687.47a8.97 8.97 0 006.829-9.513C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                </a>
+                <!-- Personal Site (Icon + Link) -->
+                <a href="https://www.stephaniejat.com" target="_blank" rel="noopener noreferrer" title="Personal Website"
+                   class="p-3 rounded-full bg-gray-100 text-gray-700 accent-bg-hover accent-text-hover transition duration-300 shadow-md transform hover:scale-105">
+                    <!-- Globe SVG Icon -->
+                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v2.043a2 2 0 01-1.104 1.792L4 17.75"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.945 11H19a2 2 0 00-2 2v2.043a2 2 0 001.104 1.792L20 17.75"></path><circle cx="12" cy="12" r="10"></circle><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v20M3 12h18"></path></svg>
+                </a>
+                <!-- Email (Icon + Link) -->
+                <a href="mailto:stephaniecjat@gmail.com" title="Email"
+                   class="p-3 rounded-full bg-gray-100 text-gray-700 accent-bg-hover accent-text-hover transition duration-300 shadow-md transform hover:scale-105">
+                    <!-- Mail SVG Icon -->
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.893 5.262A2 2 0 0012 13.928a2 2 0 001.107-.466L21 8m-2 4v7a2 2 0 01-2 2H5a2 2 0 01-2-2v-7"></path></svg>
+                </a>
+                <!-- Phone (Icon + Link) -->
+                <a href="tel:+447821340942" title="Call"
+                   class="p-3 rounded-full bg-gray-100 text-gray-700 accent-bg-hover accent-text-hover transition duration-300 shadow-md transform hover:scale-105">
+                    <!-- Phone SVG Icon -->
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.128a11.056 11.056 0 006.307 6.307l1.128-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C7.82 21 3 16.18 3 10V5z"></path></svg>
+                </a>
+            </div>
+        </header>
+
+        <!-- About Me Section (Target: #about) -->
+        <section id="about" class="mb-10">
+            <h2 class="text-3xl section-heading">ABOUT ME</h2>
+            <p class="text-lg text-gray-600">
+                I'm a **neurolinguistic researcher** based in London with 3 years of experience in **coding, content editing, and publications**. I am currently a PhD researcher focusing on **AI and critical thinking**, bringing a linguistic lens to complex computational problems.
+            </p>
+        </section>
+
+        <!-- Technical Skills Section (Target: #skills) -->
+        <section id="skills" class="mb-10">
+            <h2 class="text-3xl section-heading">CODING & RESEARCH SKILLS</h2>
+            <div class="flex flex-wrap gap-2">
+                <!-- Badges now use the solid --card background with white text for high contrast -->
+                <span class="px-3 py-1 text-sm font-medium rounded-full" style="background-color: hsl(var(--card) / 1); color: white;">Python (NLP/ML)</span>
+                <span class="px-3 py-1 text-sm font-medium rounded-full" style="background-color: hsl(var(--card) / 1); color: white;">Natural Language Processing (NLP)</span>
+                <span class="px-3 py-1 text-sm font-medium rounded-full" style="background-color: hsl(var(--card) / 1); color: white;">Machine Learning</span>
+                <span class="px-3 py-1 text-sm font-medium rounded-full" style="background-color: hsl(var(--card) / 1); color: white;">OpenAI & spaCy</span>
+                <span class="px-3 py-1 text-sm font-medium rounded-full" style="background-color: hsl(var(--card) / 1); color: white;">Data Analysis (Pandas/Matplotlib)</span>
+                <span class="px-3 py-1 text-sm font-medium rounded-full" style="background-color: hsl(var(--card) / 1); color: white;">HTML, CSS, JavaScript, C</span>
+                <span class="px-3 py-1 text-sm font-medium rounded-full" style="background-color: hsl(var(--card) / 1); color: white;">Cantonese & Mandarin (Fluent)</span>
+                <span class="px-3 py-1 text-sm font-medium rounded-full" style="background-color: hsl(var(--card) / 1); color: white;">Spanish (Fluent)</span>
+            </div>
+        </section>
+        
+        <!-- Publications Section (Target: #publications) -->
+        <section id="publications" class="mb-10">
+            <h2 class="text-3xl section-heading">PUBLICATIONS & RESEARCH</h2>
+            <ul class="space-y-4 text-gray-700">
+                <li class="p-4 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-gray-900">Jat, S. C., McDougall, K., & Paver, A. (2023).</p>
+                    <p class="italic accent-text">Pausing and the 'Othello Error': Patterns of pausing in truthful and deceptive speech in the DyViS database.</p>
+                    <p class="text-sm">International Journal of Speech, Language and the Law, 30(1), 87-118. 
+                        <a href="https://doi.org/10.1558/ijsll.24331" target="_blank" class="accent-text hover:underline font-semibold">Read Article (DOI Link)</a>
+                    </p>
+                </li>
+                <li class="p-4 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-gray-900">Jat, S. C. (2025). [Submitted]</p>
+                    <p class="italic">"O ruin'd piece of nature': Can We Use Natural language Processing to Improve Environmental Inequity?</p>
+                    <p class="text-sm">NLP4PI 2025.</p>
+                </li>
+                 <li class="p-4 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-gray-900">Jat, S. C. (2025). [Submitted]</p>
+                    <p class="italic">'How does your patient, doctor? A brief discussion on bias within healthcare-related NLP advances.</p>
+                    <p class="text-sm">Interspeech 2025.</p>
+                </li>
+            </ul>
+        </section>
+
+
+        <!-- Education Section (Target: #education) -->
+        <section id="education" class="mb-10">
+            <h2 class="text-3xl section-heading">EDUCATION</h2>
+            <div class="space-y-6">
+                <div class="p-4 border-b border-gray-100">
+                    <h3 class="text-xl font-semibold accent-text">University of Cambridge</h3>
+                    <p class="text-lg font-medium text-gray-900">MPhil Theoretical and Applied Linguistics (2021–2022)</p>
+                    <p class="text-sm text-gray-600">Passed with no corrections [Distinction]. Dissertation in Computational Historical Corpora.</p>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold accent-text">University of Cambridge</h3>
+                    <p class="text-lg font-medium text-gray-900">BA Theoretical and Applied Linguistics (2018–2021)</p>
+                    <p class="text-sm text-gray-600">Overall 1st with distinction. Dissertation in Forensic Phonetics.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional and Leadership Experience Section (Target: #experience) -->
+        <section id="experience" class="mb-10">
+            <h2 class="text-3xl section-heading">EXPERIENCE & LEADERSHIP</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Card 1: AI Internship (Linked to GitHub for code examples) -->
+                <a href="https://github.com/scj45" target="_blank" rel="noopener noreferrer" 
+                   class="block p-6 rounded-xl shadow-lg transition transform hover:scale-[1.01] group card-hover-light" style="background-color: hsl(var(--card) / 1); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);">
+                    <h3 class="text-xl font-bold text-white mb-1">AI and Automation Intern</h3>
+                    <p class="text-gray-300 mb-3">Amber Labs, UK (Oct 2023 - Feb 2024)</p>
+                    <ul class="list-disc pl-5 text-gray-200 space-y-1 text-sm">
+                        <li>Built and trained models in **Python** for internal process automation.</li>
+                        <li>Developed a functional chatbot using **OpenAI and spaCy**.</li>
+                        <li>Analyzed data from Monday.com using **make.com** integrations.</li>
+                    </ul>
+                    <span class="block mt-3 text-sm font-medium text-white group-hover:underline">View relevant code on GitHub &rarr;</span>
+                </a>
+
+                <!-- Card 2: Founder & CEO (Linked to Personal Site/Brand Site) -->
+                <a href="https://www.stephaniejat.com" target="_blank" rel="noopener noreferrer" 
+                   class="block p-6 rounded-xl shadow-lg transition transform hover:scale-[1.01] group card-hover-light" style="background-color: hsl(var(--card) / 1); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);">
+                    <h3 class="text-xl font-bold text-white mb-1">Founder & CEO</h3>
+                    <p class="text-gray-300 mb-3">Not Just Small Change, UK (Jan 2022 - Present)</p>
+                    <ul class="list-disc pl-5 text-gray-200 space-y-1 text-sm">
+                        <li>Successfully **launched brand website and two products** within three months.</li>
+                        <li>**Raised over £900** for Eating Disorder Awareness Week and the local Ukrainian crisis appeal.</li>
+                        <li>Secured sponsorships and managed sales for fundraising initiatives.</li>
+                    </ul>
+                    <span class="block mt-3 text-sm font-medium text-white group-hover:underline">Visit Not Just Small Change &rarr;</span>
+                </a>
+
+                <!-- Card 3: Editor-in-Chief (Linked to Personal Site/Journal Page) -->
+                <a href="https://www.stephaniejat.com" target="_blank" rel="noopener noreferrer" 
+                   class="block p-6 rounded-xl shadow-lg transition transform hover:scale-[1.01] group card-hover-light" style="background-color: hsl(var(--card) / 1); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);">
+                    <h3 class="text-xl font-bold text-white mb-1">Editor-in-Chief U-Lingua</h3>
+                    <p class="text-gray-300 mb-3">The Undergraduate Linguistics Association (Apr 2021 - Apr 2022)</p>
+                    <ul class="list-disc pl-5 text-gray-200 space-y-1 text-sm">
+                        <li>**Increased reader engagement by 100%** through community outreach and social media.</li>
+                        <li>Secured **£450 grant** from the Linguistics Association of Great Britain for hardcopy distribution.</li>
+                        <li>Doubled the size of the editorial team, expanding university representation.</li>
+                    </ul>
+                    <span class="block mt-3 text-sm font-medium text-white group-hover:underline">Learn more about U-Lingua &rarr;</span>
+                </a>
+
+                 <!-- Card 4: Leadership Roles (Not externally linkable, kept as div for non-interactive content) -->
+                <div class="p-6 rounded-xl shadow-lg transition" style="background-color: hsl(var(--card) / 1); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);">
+                    <h3 class="text-xl font-bold text-white mb-1">Co-President & Welfare Officer</h3>
+                    <p class="text-gray-300 mb-3">Pembroke College Committees</p>
+                    <ul class="list-disc pl-5 text-gray-200 space-y-1 text-sm">
+                        <li>**Organized a sold-out May Ball** for 1,300 guests, overseeing all logistics (security, decor, entertainment).</li>
+                        <li>As Welfare Officer, **increased mental health provisions** and launched Unmind/Headspace partnerships.</li>
+                        <li>Other notable achievements in fundraising and performance arts.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-10 text-center text-sm text-gray-500">
+        <p>Built with custom colors for visual consistency.</p>
+        <p>&copy; 2024 STEPHANIE C. JAT</p>
+    </footer>
+</body>
+</html>

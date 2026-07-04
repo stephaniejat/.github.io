@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stephanie C. Jat - Machine Learning & Neurolinguistics</title>
+    <title>Stephanie C. Jat - Theoretical & Applied Machine Learning </title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom font import (Inter) */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
         
-        /* --- ALL CUSTOM COLOR DEFINITIONS --- */
+        /* --- CUSTOM COLOR DEFINITIONS --- */
         :root {
             /* Standard Colors */
             --background: 44.52deg 52.54% 88.43%;
@@ -182,7 +182,7 @@
         <section id="about" class="mb-10">
             <h2 class="text-3xl section-heading">ABOUT ME</h2>
             <p class="text-lg text-gray-600">
-                I'm a Machine Learning MSc student at UCL. I also dabble in NLP, computational theory and linguistics, and UAV robotics.
+                I'm a Machine Learning MSc at UCL. Areas of interest: operator learning, uncertainty quantification, OOD testing, RL as optimal control.
             </p>
         </section>
 
@@ -191,21 +191,16 @@
             <h2 class="text-3xl section-heading">PUBLICATIONS & RESEARCH</h2>
             <ul class="space-y-4 text-gray-700">
                 <li class="p-4 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-gray-900">MSc Dissertation | WIP: </p>
+                    <p class="italic">Working title: 'There is a tide': Kernel effects on spectral learning of reversible and non‑reversible dynamical systems.</p>
+                    <p class="text-sm">Supervised by Prof. Massi Pontil.</p>
+                </li>
+                <li class="p-4 bg-gray-50 rounded-lg shadow-sm">
                     <p class="font-semibold text-gray-900">Jat, S. C., McDougall, K., & Paver, A. (2023).</p>
                     <p class="italic accent-text">Pausing and the 'Othello Error': Patterns of pausing in truthful and deceptive speech in the DyViS database.</p>
                     <p class="text-sm">International Journal of Speech, Language and the Law, 30(1), 87-118. 
                         <a href="https://doi.org/10.1558/ijsll.24331" target="_blank" class="accent-text hover:underline font-semibold">Read Article (DOI Link)</a>
                     </p>
-                </li>
-                <li class="p-4 bg-gray-50 rounded-lg shadow-sm">
-                    <p class="font-semibold text-gray-900">Jat, S. C. (2025). [Submitted]</p>
-                    <p class="italic">"O ruin'd piece of nature': Can We Use Natural language Processing to Improve Environmental Inequity?</p>
-                    <p class="text-sm">NLP4PI 2025.</p>
-                </li>
-                 <li class="p-4 bg-gray-50 rounded-lg shadow-sm">
-                    <p class="font-semibold text-gray-900">Jat, S. C. (2025). [Submitted]</p>
-                    <p class="italic">'How does your patient, doctor? A brief discussion on bias within healthcare-related NLP advances.</p>
-                    <p class="text-sm">Interspeech 2025.</p>
                 </li>
             </ul>
         </section>
@@ -258,14 +253,14 @@
 
         <!-- Technical Skills Section (Target: #skills) -->
         <section id="skills" class="mb-10">
-            <h2 class="text-3xl section-heading">CODING & RESEARCH SKILLS</h2>
+            <h2 class="text-3xl section-heading">TECHNICAL SKILLS</h2>
             <div class="flex flex-wrap gap-2">
                 <!-- Badges now use the solid --card background with white text for high contrast -->
                 <span class="px-3 py-1 text-sm font-medium rounded-full card-bg" style="color: white;">Python, C, Shell</span>
-                <span class="px-3 py-1 text-sm font-medium rounded-full card-bg" style="color: white;">Natural Language Processing (NLP)</span>
+                <span class="px-3 py-1 text-sm font-medium rounded-full card-bg" style="color: white;">Natural Language Processing</span>
                 <span class="px-3 py-1 text-sm font-medium rounded-full card-bg" style="color: white;">Machine Learning</span>
-                <span class="px-3 py-1 text-sm font-medium rounded-full card-bg" style="color: white;">OpenAI & spaCy</span>
-                <span class="px-3 py-1 text-sm font-medium rounded-full card-bg" style="color: white;">Data Analysis (Pandas/Matplotlib)</span>
+                <span class="px-3 py-1 text-sm font-medium rounded-full card-bg" style="color: white;">ROS, spaCy, hud, MatLab, kooplearn, Linux</span>
+                <span class="px-3 py-1 text-sm font-medium rounded-full card-bg" style="color: white;">Data Analysis</span>
                 <span class="px-3 py-1 text-sm font-medium rounded-full card-bg" style="color: white;">HTML, CSS, JavaScript, Django</span>
                 <span class="px-3 py-1 text-sm font-medium rounded-full card-bg" style="color: white;">English, Cantonese & Putonghua (native)</span>
                 <span class="px-3 py-1 text-sm font-medium rounded-full card-bg" style="color: white;">Spanish (Fluent)</span>
@@ -306,7 +301,27 @@
             <h2 class="text-3xl section-heading">EXPERIENCE & LEADERSHIP</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 
-                <!-- Card 1: AI Internship -->
+                <!-- Card 1: Consultant -->
+                   class="block p-6 rounded-xl shadow-lg transition transform hover:scale-[1.01] group card-hover-light card-bg" style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);">
+                    <h3 class="text-xl font-bold text-white mb-1">Consultant</h3>
+                    <p class="text-gray-300 mb-3">Tensium, UK (Jul 2026 - present)</p>
+                    <ul class="list-disc pl-5 text-gray-200 space-y-1 text-sm">
+                        <li>Research existing frontier model weaknesses to apply targeted robustness testing.</li>
+                        <li>Designing and building RL environments to stress-test frontier model soundness.</li>
+                        <li>Formulating OOD-testing template for SWEs to reuse when building future environments.</li>
+                    </ul>
+                </a>
+                <!-- Card 2: Robotics lab -->
+                   class="block p-6 rounded-xl shadow-lg transition transform hover:scale-[1.01] group card-hover-light card-bg" style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);">
+                    <h3 class="text-xl font-bold text-white mb-1">Research Assistant</h3>
+                    <p class="text-gray-300 mb-3">UCL Robotics Lab (Jun 2025 - Sep 2025)</p>
+                    <ul class="list-disc pl-5 text-gray-200 space-y-1 text-sm">
+                        <li>Supervised by Dr Valerio Modugno, in collaboration with LAAS-CNRS (Université de Toulouse) to test novel tawaki firmware with their \texttt{robotpkg} software.</li>
+                        <li>Installing, repackaging, debugging and writing software to fine-tune the UAV.</li>
+                    </ul>
+                    <span class="block mt-3 text-sm font-medium text-white group-hover:underline">View relevant code on GitHub &rarr;</span>
+                </a>
+                <!-- Card 3: AI Internship -->
                    class="block p-6 rounded-xl shadow-lg transition transform hover:scale-[1.01] group card-hover-light card-bg" style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);">
                     <h3 class="text-xl font-bold text-white mb-1">AI and Automation Intern</h3>
                     <p class="text-gray-300 mb-3">Amber Labs, UK (Oct 2023 - Feb 2024)</p>
@@ -318,7 +333,7 @@
                     <span class="block mt-3 text-sm font-medium text-white group-hover:underline">View relevant code on GitHub &rarr;</span>
                 </a>
 
-                <!-- Card 2: Founder & CEO (Linked to Personal Site/Brand Site) -->
+                <!-- Card 4: Founder & CEO (Linked to Personal Site/Brand Site) -->
                 <a href="https://www.stephaniejat.com" target="_blank" rel="noopener noreferrer" 
                    class="block p-6 rounded-xl shadow-lg transition transform hover:scale-[1.01] group card-hover-light card-bg" style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);">
                     <h3 class="text-xl font-bold text-white mb-1">Founder & CEO</h3>
@@ -331,7 +346,7 @@
                     <span class="block mt-3 text-sm font-medium text-white group-hover:underline">Visit Not Just Small Change &rarr;</span>
                 </a>
 
-                <!-- Card 3: Editor-in-Chief (Linked to Personal Site/Journal Page) -->
+                <!-- Card 5: Editor-in-Chief (Linked to Personal Site/Journal Page) -->
                 <a href="https://notjustsmallchange.square.site/" target="_blank" rel="noopener noreferrer" 
                    class="block p-6 rounded-xl shadow-lg transition transform hover:scale-[1.01] group card-hover-light card-bg" style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);">
                     <h3 class="text-xl font-bold text-white mb-1">Editor-in-Chief U-Lingua</h3>
@@ -344,7 +359,7 @@
                     <span class="block mt-3 text-sm font-medium text-white group-hover:underline">Learn more about U-Lingua &rarr;</span>
                 </a>
 
-                 <!-- Card 4: Leadership Roles -->
+                 <!-- Card 6: Leadership Roles -->
                 <div class="p-6 rounded-xl shadow-lg transition card-bg" style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);">
                     <h3 class="text-xl font-bold text-white mb-1">Co-President & Welfare Officer</h3>
                     <p class="text-gray-300 mb-3">Pembroke College Committees</p>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stephanie C. Jat - Theoretical & Applied Machine Learning </title>
+    <title>Stephanie C. Jat - Statistical & Robust Machine Learning </title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -182,7 +182,7 @@
         <section id="about" class="mb-10">
             <h2 class="text-3xl section-heading">ABOUT ME</h2>
             <p class="text-lg text-gray-600">
-                I'm a Machine Learning MSc at UCL. Areas of interest: operator learning, uncertainty quantification, OOD testing, RL as optimal control.
+                I'm a Machine Learning MSc at UCL. Areas of interest: statistically principled learning + evaluation, uncertainty quantification, OOD generalisation, RL as optimal control.
             </p>
         </section>
 
@@ -192,8 +192,11 @@
             <ul class="space-y-4 text-gray-700">
                 <li class="p-4 bg-gray-50 rounded-lg shadow-sm">
                     <p class="font-semibold text-gray-900">MSc Dissertation | WIP: </p>
-                    <p class="italic">'There is a tide': Kernel effects on spectral learning of reversible and non‑reversible dynamical systems.</p>
+                    <p class="italic">'There is a tide': Kernel effects on spectral learning of dynamical systems.</p>
                     <p class="text-sm">Supervised by Prof. Massi Pontil.</p>
+                    <li>Modelled graphs as dynamical systems and evaluated self-supervised representation learning across dynamical regimes;</li>
+                    <li>Designed controlled experiments; used nested validation; held-out splits, correlation analysis, bias--variance decomposition;</li>
+                    <li>Developed a composite diagnostic to compare kernel-induced representations in operator learning, contributing to a proposed hierarchical, conditioning-driven selection principle; extended \texttt{kooplearn} with diagnostic implementation.</li>
                 </li>
                 <li class="p-4 bg-gray-50 rounded-lg shadow-sm">
                     <p class="font-semibold text-gray-900">Jat, S. C., McDougall, K., & Paver, A. (2023).</p>
@@ -306,9 +309,9 @@
                     <h3 class="text-xl font-bold text-white mb-1">Consultant</h3>
                     <p class="text-gray-300 mb-3">Tensium, UK (Jul 2026 - present)</p>
                     <ul class="list-disc pl-5 text-gray-200 space-y-1 text-sm">
-                        <li>Research existing frontier model weaknesses to apply targeted robustness testing.</li>
-                        <li>Designing and building RL environments to stress-test frontier model soundness.</li>
-                        <li>Formulating OOD-testing template for SWEs to reuse when building future environments.</li>
+                        <li>Build laddered verifiers and adversarial cheat batteries for long-horizon (multi-step, multi-file) RL task environments, targeting shortcut behaviour such as reward hacking, evaluator gaming, memorisation, and specification gaming.</li>
+                        <li>Use planted structural mistakes to distinguish genuine competence from surface fixes, evaluating both missed cheats and incorrectly flagged competent behaviour, reflected in a progressive scoring policy.</li>
+                        <li>Ship reproducible Python evaluation harnesses with controlled splits, diagnostics, and adversarial stress tests.</li>
                     </ul>
                 </div>  
                 <!-- Card 2: Robotics lab -->
